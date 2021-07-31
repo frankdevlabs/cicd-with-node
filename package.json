@@ -1,0 +1,43 @@
+{
+  "name": "cicd-with-node",
+  "version": "0.0.1",
+  "description": "testing cicd github-actions",
+  "main": "src/index.js",
+  "scripts": {
+    "prod:start": "npm run prod:build && node ./dist/index.js",
+    "prod:clean": "rm -rf dist",
+    "prod:build": "npm run prod:clean && npx babel --minified --no-comments src --out-dir dist",
+    "dev:start": "nodemon --exec node_modules/.bin/babel-node src/index.js",
+    "test": "node_modules/jest/bin/jest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankdevlabs/cicd-with-node.git"
+  },
+  "keywords": [
+    "cicd",
+    "testing",
+    "actions"
+  ],
+  "author": "frank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frankdevlabs/cicd-with-node/issues"
+  },
+  "homepage": "https://github.com/frankdevlabs/cicd-with-node#readme",
+  "dependencies": {
+    "core-js": "^3.16.0",
+    "express": "^4.17.1",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4"
+  }
+}
