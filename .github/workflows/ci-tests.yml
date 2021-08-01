@@ -5,9 +5,9 @@ name: CI Tests
 
 on:
   push:
-    branches: [ next-test ]
+    branches: [ main, next ]
   pull_request:
-    branches: [ next-test ]
+    branches: [ main, next ]
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
